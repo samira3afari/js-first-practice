@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>تمرین DOM و UI</title>
+    <style>
+        body {
+            font-family: 'Tahoma', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f2f5;
+            margin: 0;
+        }
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1 id="title">سلام دنیا</h1>
+        <button id="change-btn">تغییر متن</button>
+    </div>
+
+    <script>
+        // ۱. انتخاب عناصر
+        const newTitle = document.getElementById("title");
+        const btn = document.getElementById("change-btn");
+
+        // ۲. اضافه کردن رویداد کلیک
+        btn.addEventListener("click", () => {
+            // ۳. تغییر متن
+            newTitle.textContent = "متن تغییر کرد!";
+            
+            // ۴. تغییر رنگ متن به قرمز
+            newTitle.style.color = "#e74c3c";
+        });
+    </script>
+</body>
+</html>
